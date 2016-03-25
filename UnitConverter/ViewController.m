@@ -10,9 +10,20 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *inputField;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentController;
+@property (weak, nonatomic) IBOutlet UILabel *outputField;
+
 @end
 
 @implementation ViewController
+- (IBAction)updateButton:(id)sender {
+    NSMutableString *buf = [NSMutableString new];
+    //stores a new string.
+    [buf appendString: @"Clicked!"];
+    self.outputField.text = buf;
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
